@@ -1,7 +1,7 @@
 namespace josergdev.Todo.Todos.Domain
 {
     using System;
-    using System.Collections.Generic;
+
     public class Todo
     {
         public TodoId Id { get; private set; }
@@ -19,11 +19,31 @@ namespace josergdev.Todo.Todos.Domain
         {
         }
 
-        public static Todo createTodo(TodoId id, TodoTitle title)
+        public static Todo CreateTodo(TodoId id, TodoTitle title)
         {
             Todo todo = new Todo(id, title, new TodoCompleted(false));
 
             return todo;
+        }
+
+        public void UpdateTitle(TodoTitle title)
+        {
+            Title = title;
+        }
+
+        public void Complete()
+        {
+            Completed = new TodoCompleted(true);
+        }
+
+        public void Uncomplete()
+        {
+            Completed = new TodoCompleted(false);
+        }
+
+        public void Remove(TodoId id)
+        {
+            // Todo: Send TodoRemoved domain event.
         }
 
         public override bool Equals(object obj)

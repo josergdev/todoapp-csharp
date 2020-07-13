@@ -9,6 +9,10 @@ namespace josergdev.Todo.Shared.Domain.ValueObject
 
         public StringValueObject(string value)
         {
+            if (value is null)
+            {
+                throw new ArgumentNullException();
+            }
             Value = value;
         }
 

@@ -1,4 +1,3 @@
-
 namespace josergdev.Todo.Todos.Domain
 {
     using josergdev.Todo.Shared.Domain.ValueObject;

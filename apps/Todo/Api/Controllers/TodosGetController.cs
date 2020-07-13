@@ -5,6 +5,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using josergdev.Todo.Todos.Application;
     using josergdev.Todo.Todos.Domain;
     using Microsoft.AspNetCore.Mvc;
     using Newtonsoft.Json;
@@ -13,17 +14,17 @@
     [ApiController]
     public class TodosGetController : Controller
     {
-        private ITodoRepository Repository;
+        private TodoFinder Finder;
 
-        public TodosGetController(ITodoRepository repository)
+        public TodosGetController(TodoFinder finder)
         {
-            Repository = repository;
+            Finder = finder;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index(string id)
         {
-            IEnumerable todos = await Repository.SearchAll();
+            IEnumerable todos = await Finder.FindAll();
 
             var response = new List<Dictionary<string, string>>();
 
