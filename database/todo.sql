@@ -2,7 +2,7 @@ IF (NOT EXISTS(SELECT *
 FROM INFORMATION_SCHEMA.TABLES
 WHERE TABLE_SCHEMA = 'dbo'
     AND TABLE_NAME = 'todos'))
-    BEGIN
+               BEGIN
     CREATE TABLE todos
     (
         [id] CHAR(36) NOT NULL,

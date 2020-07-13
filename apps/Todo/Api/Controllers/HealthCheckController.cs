@@ -9,7 +9,7 @@ namespace josergdev.Apps.Todo.Api.Controllers
     {
 
         [HttpGet]
-        public IActionResult handle()
+        public IActionResult index()
         {
             return Ok(new Dictionary<string, string>()
             {

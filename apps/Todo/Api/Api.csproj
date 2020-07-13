@@ -4,7 +4,16 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>josergdev.Apps.Todo.Api</RootNamespace>
     <AssemblyName>josergdev.Apps.Todo.Api</AssemblyName>
+    <UserSecretsId>ad1fae92-40ce-4376-82ee-cff50401e043</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<ProjectReference Include="..\..\..\src\Todo\Todo.csproj" />
+  </ItemGroup>
 
 </Project>
